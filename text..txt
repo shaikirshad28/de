@@ -1,0 +1,2699 @@
+s1 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+</head>
+<body>
+
+    <h2>Event Registration Form</h2>
+
+    <form id="form">
+        Name: <input type="text" id="name"><br><br>
+
+        Email: <input type="email" id="email"><br><br>
+
+        Phone: <input type="text" id="phone"><br><br>
+
+        Gender:
+        <select id="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select><br><br>
+
+        College: <input type="text" id="college"><br><br>
+
+        Department: <input type="text" id="dept"><br><br>
+
+        Year:
+        <select id="year">
+            <option value="">Select</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+        </select><br><br>
+
+        Event:
+        <select id="event">
+            <option value="">Select</option>
+            <option>Technical</option>
+            <option>Cultural</option>
+            <option>Sports</option>
+        </select><br><br>
+
+        <button type="button" onclick="register()">Register</button>
+        <button type="reset" onclick="document.getElementById('result').innerHTML=''">Reset</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function register() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            if (name == "" || email == "" || phone == "") {
+                alert("Please fill all required fields!");
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    "Registration Successful!<br>" +
+                    "Name: " + name + "<br>" +
+                    "Email: " + email + "<br>" +
+                    "Phone: " + phone;
+            }
+        }
+    </script>
+
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial;
+        background-color: lightblue;
+        text-align: center;
+    }
+
+    form {
+        background-color: white;
+        width: 350px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    input, select {
+        padding: 8px;
+        width: 90%;
+        margin: 5px;
+    }
+
+    button {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #result {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+
+
+-------------------------simple 2------------------------
+code and only commands
+Experiment 2: Student Management System using Git and GitHub
+Step 1: Open VS Code and create a project
+Open VS Code.
+
+Click File → Open Folder.
+
+Create a folder named student-management.
+
+Open that folder.
+
+Click New File and create index.html.
+
+Step 2: Add the code
+Open index.html and paste:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+</head>
+<body>
+
+    <h2>Student Management System</h2>
+
+    <input type="text" id="name" placeholder="Student Name">
+    <input type="text" id="roll" placeholder="Roll Number">
+    <input type="text" id="dept" placeholder="Department">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th>Department</th>
+        </tr>
+        <tbody id="studentList"></tbody>
+    </table>
+
+    <script>
+        function addStudent() {
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+            let dept = document.getElementById("dept").value;
+
+            if (name == "" || roll == "" || dept == "") {
+                alert("Fill all fields!");
+                return;
+            }
+
+            let table = document.getElementById("studentList");
+            let row = table.insertRow();
+
+            row.insertCell(0).innerHTML = name;
+            row.insertCell(1).innerHTML = roll;
+            row.insertCell(2).innerHTML = dept;
+
+            alert("Student Added Successfully!");
+
+            document.getElementById("name").value = "";
+            document.getElementById("roll").value = "";
+            document.getElementById("dept").value = "";
+        }
+    </script>
+
+</body>
+</html>
+
+Step 3: Run the application
+Right-click index.html → Reveal in File Explorer → Double-click index.html.
+Step 4: Open VS Code Terminal
+Click Terminal → New Terminal.
+
+Execute these commands one by one:
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+
+
+Step 5: Create GitHub repository
+1. Open https://github.com
+2. Click New Repository.
+3. Enter student-management.
+4. Click Create Repository.
+Step 6: Push project to GitHub
+Replace YOUR_USERNAME with your GitHub username.
+git remote add origin https://github.com/YOUR_USERNAME/student-management.git
+git push -u origin main
+
+
+Step 7: Update and push changes
+After modifying and saving your code:
+git add .
+git commit -m "Updated student management system"
+git push origin main
+
+
+Step 8: View commit history
+git log --oneline
+
+
+Result: Student Management System successfully developed using VS Code, tracked using Git, and uploaded to GitHub.
+
+
+--------------------s4---------------------
+extra
+Experiment 4: Student Registration and Student Search using Git Branches
+Step 1: Open VS Code
+Open VS Code.
+
+Click File → Open Folder.
+
+Create and open student-management.
+
+Open Terminal → New Terminal.
+
+Step 2: Create HTML files
+Create these three files in VS Code Explorer:
+
+student-management/
+├── index.html
+├── registration.html
+└── search.html
+Step 3: Home Page – index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+</head>
+<body>
+
+    <h1>Student Management System</h1>
+
+    <p>Welcome to Student Management System</p>
+
+    <a href="registration.html">Student Registration</a>
+    <br><br>
+
+    <a href="search.html">Student Search</a>
+
+</body>
+</html>
+
+Step 4: Initialize Git
+VS Code Terminal:
+
+git init
+git branch -M main
+git add index.html
+git commit -m "Created home page"
+
+Step 5: Create Student Registration branch
+git checkout -b student-registration
+
+Open registration.html and add:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+    <h2>Student Registration</h2>
+
+    <input type="text" id="name" placeholder="Student Name">
+    <br><br>
+
+    <input type="text" id="roll" placeholder="Roll Number">
+    <br><br>
+
+    <input type="text" id="dept" placeholder="Department">
+    <br><br>
+
+    <button onclick="register()">Register</button>
+
+    <p id="result"></p>
+
+    <a href="index.html">Home</a>
+
+    <script>
+        function register() {
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+            let dept = document.getElementById("dept").value;
+
+            if (name == "" || roll == "" || dept == "") {
+                alert("Fill all fields!");
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Student Registered Successfully!";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+Save the file.
+
+Commit:
+
+git add registration.html
+git commit -m "Added student registration"
+
+Step 6: Create Student Search branch
+git checkout main
+git checkout -b student-search
+
+Open search.html and add:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Search</title>
+</head>
+<body>
+
+    <h2>Student Search</h2>
+
+    <input type="text" id="name" placeholder="Enter Student Name">
+
+    <button onclick="searchStudent()">Search</button>
+
+    <p id="result"></p>
+
+    <a href="index.html">Home</a>
+
+    <script>
+        function searchStudent() {
+            let name = document.getElementById("name").value;
+
+            if (name == "") {
+                alert("Enter Student Name!");
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Searching for: " + name;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+Save the file.
+
+Commit:
+
+git add search.html
+git commit -m "Added student search"
+
+Step 7: Merge branches into main
+git checkout main
+git merge student-registration
+git merge student-search
+
+Step 8: Push to GitHub
+Create a repository named student-management on GitHub.
+
+Run:
+
+git remote add origin https://github.com/YOUR_USERNAME/student-management.git
+git push -u origin main
+git push origin student-registration
+git push origin student-search
+
+Step 9: Check branches and history
+git branch
+git log --oneline --graph --all
+
+
+
+
+
+
+--------------- s5-----------------------
+Experiment 5: Git Merge Conflict Resolution using README.md
+Aim: Create two branches that modify the same line in README.md, merge the branches, resolve the merge conflict, and push the resolved changes to GitHub.
+Step 1: Open VS Code
+1. Open VS Code.
+2. Click File → Open Folder.
+3. Create a folder named git-conflict.
+4. Open Terminal → New Terminal.
+Step 2: Create README.md
+Create a file named README.md in VS Code Explorer.
+
+Add this code:
+# Student Management System
+
+This project is developed using HTML.
+
+
+Save the file.
+Step 3: Initialize Git
+git init
+git branch -M main
+git add .
+git commit -m "Initial commit"
+
+
+Step 4: Create first branch
+git checkout -b branch1
+
+
+Open README.md and change the second line to:
+This project is developed using Java.
+
+
+Save and commit:
+git add README.md
+git commit -m "Updated README using Java"
+
+
+Step 5: Create second branch
+git checkout main
+git checkout -b branch2
+
+
+Open README.md and change the same second line to:
+This project is developed using Python.
+
+
+Save and commit:
+git add README.md
+git commit -m "Updated README using Python"
+
+
+Step 6: Merge first branch
+git checkout main
+git merge branch1
+
+
+Step 7: Merge second branch
+git merge branch2
+
+
+Git will show a CONFLICT because both branches modified the same line.
+Step 8: Resolve merge conflict
+Open README.md in VS Code.
+
+You will see:
+<<<<<<< HEAD
+This project is developed using Java.
+=======
+This project is developed using Python.
+>>>>>>> branch2
+
+
+Replace it with:
+# Student Management System
+
+This project is developed using Java and Python.
+
+
+Save the file.
+Step 9: Commit resolved changes
+git add README.md
+git commit -m "Resolved README merge conflict"
+
+
+Step 10: Push to GitHub
+Create a GitHub repository named git-conflict.
+git remote add origin https://github.com/YOUR_USERNAME/git-conflict.git
+git push -u origin main
+git push origin branch1
+git push origin branch2
+
+
+Step 11: Verify
+git status
+git log --oneline --graph --all
+
+
+Result: Successfully created two branches, modified the same line in README.md, generated and resolved a merge conflict, and pushed the resolved changes to GitHub.
+
+
+---------------------------------------s6---------------------------------
+Step 1: Open VS Code and create a project
+1. Open VS Code.
+2. Click File → Open Folder.
+3. Create a folder named LibraryManagementSystem.
+4. Open Terminal → New Terminal.
+Step 2: Create project files
+Create these three files in VS Code Explorer:
+LibraryManagementSystem/
+│
+├── index.html
+├── style.css
+└── script.js
+
+
+Step 3: Add HTML code – index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Library Management System</h1>
+
+    <input type="text" id="book" placeholder="Enter Book Name">
+
+    <button onclick="addBook()">Add Book</button>
+
+    <h3>Book List</h3>
+
+    <ul id="bookList"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+Step 4: Add CSS code – style.css
+
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: lightblue;
+}
+
+input {
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+Step 5: Add JavaScript code – script.js
+
+function addBook() {
+    let book = document.getElementById("book").value;
+
+    if (book == "") {
+        alert("Enter book name!");
+    } else {
+        let li = document.createElement("li");
+        li.innerHTML = book;
+
+        document.getElementById("bookList").appendChild(li);
+
+        document.getElementById("book").value = "";
+    }
+}
+
+
+
+Step 6: Run the application
+1. Save all files using Ctrl + S.
+2. Open index.html in your browser.
+3. Enter a book name.
+4. Click Add Book.
+5. The book will appear in the list.
+Step 7: Initialize Git
+In the VS Code terminal:
+git init
+
+
+Step 8: Stage HTML file individually
+git add index.html
+
+
+Commit:
+git commit -m "Added library management HTML page"
+
+
+Step 9: Stage CSS file individually
+git add style.css
+
+
+Commit:
+git commit -m "Added CSS styling"
+
+
+Step 10: Stage JavaScript file individually
+git add script.js
+
+
+Commit:
+git commit -m "Added book management functionality"
+
+
+Step 11: Check Git status and commit history
+git status
+
+
+git log --oneline
+
+
+Step 12: Push to GitHub
+1. Open https://github.com.
+2. Create a repository named LibraryManagementSystem.
+Run these commands in VS Code terminal:
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/LibraryManagementSystem.git
+git push -u origin main
+
+
+Replace YOUR_USERNAME with your GitHub username.
+
+Result: Successfully created a Library Management System using HTML, CSS and JavaScript, staged each file individually, committed them using meaningful messages, and pushed the project to GitHub.
+
+
+------------------s7------------------------
+repository, and push the project to the remote repository
+Experiment 7: Employee Management System using Git and GitHub
+Aim: Create a local repository for an Employee Management System, connect it to a GitHub repository, and push the project to the remote repository.
+
+Step 1: Open VS Code
+Open VS Code.
+
+Click File → Open Folder.
+
+Create a folder named EmployeeManagementSystem.
+
+Open Terminal → New Terminal.
+
+Step 2: Create project files
+Create these three files in VS Code Explorer:
+
+EmployeeManagementSystem/
+│
+├── index.html
+├── style.css
+└── script.js
+Step 3: Add HTML code – index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Employee Management System</h1>
+
+    <input type="text" id="name" placeholder="Employee Name">
+    <input type="text" id="id" placeholder="Employee ID">
+    <input type="text" id="dept" placeholder="Department">
+
+    <button onclick="addEmployee()">Add Employee</button>
+
+    <h3>Employee List</h3>
+
+    <ul id="employeeList"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+Step 4: Add CSS code – style.css
+
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+Step 5: Add JavaScript code – script.js
+
+function addEmployee() {
+    let name = document.getElementById("name").value;
+    let id = document.getElementById("id").value;
+    let dept = document.getElementById("dept").value;
+
+    if (name == "" || id == "" || dept == "") {
+        alert("Fill all fields!");
+    } else {
+        let li = document.createElement("li");
+
+        li.innerHTML = name + " - " + id + " - " + dept;
+
+        document.getElementById("employeeList").appendChild(li);
+
+        alert("Employee Added Successfully!");
+
+        document.getElementById("name").value = "";
+        document.getElementById("id").value = "";
+        document.getElementById("dept").value = "";
+    }
+}
+
+Step 6: Initialize local Git repository
+Run these commands in VS Code Terminal:
+
+git init
+git add .
+git commit -m "Initial commit - Employee Management System"
+
+Step 7: Create GitHub repository
+Open https://github.com.
+
+Login to your account.
+
+Click New Repository.
+
+Repository name: EmployeeManagementSystem.
+
+Select Public.
+
+Click Create Repository.
+
+Step 8: Connect local repository to GitHub
+Replace YOUR_USERNAME with your GitHub username.
+
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/EmployeeManagementSystem.git
+
+Step 9: Push project to GitHub
+git push -u origin main
+
+Step 10: Verify repository
+git status
+git remote -v
+git log --oneline
+
+
+
+-------------------s8-----------------------
+Experiment 8: Banking Application using Git
+Aim: Create a Banking Application project and demonstrate how to stage, unstage, and commit source files using Git.
+Step 1: Open VS Code and create a project
+1. Open VS Code.
+2. Click File → Open Folder.
+3. Create a folder named BankingApplication.
+4. Open the folder.
+5. Click Terminal → New Terminal.
+Step 2: Create project files
+In VS Code Explorer, create these three files:
+BankingApplication/
+│
+├── index.html
+├── style.css
+└── script.js
+
+
+Step 3: Write HTML code – index.html
+Open index.html and add:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Bank Management System</h1>
+
+    <h3>Customer Details</h3>
+
+    <input type="text" id="name" placeholder="Customer Name">
+    <input type="text" id="account" placeholder="Account Number">
+    <input type="text" id="phone" placeholder="Phone Number">
+
+    <br><br>
+
+    <button onclick="addCustomer()">Add Customer</button>
+
+    <h3>Customer List</h3>
+
+    <ul id="customerList"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+Save the file using Ctrl + S.
+Step 4: Write CSS code – style.css
+Open style.css and add:
+
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+Save the file.
+Step 5: Write JavaScript code – script.js
+Open script.js and add:
+
+function addCustomer() {
+    let name = document.getElementById("name").value;
+    let account = document.getElementById("account").value;
+    let phone = document.getElementById("phone").value;
+
+    if (name == "" || account == "" || phone == "") {
+        alert("Please fill all details!");
+    } else {
+        let li = document.createElement("li");
+
+        li.innerHTML = "Name: " + name +
+            " | Account: " + account +
+            " | Phone: " + phone;
+
+        document.getElementById("customerList").appendChild(li);
+
+        alert("Customer Added Successfully!");
+
+        document.getElementById("name").value = "";
+        document.getElementById("account").value = "";
+        document.getElementById("phone").value = "";
+    }
+}
+
+
+
+Save the file.
+Step 6: Run the application
+1. Open index.html.
+2. Right-click and select Reveal in File Explorer.
+3. Double-click index.html.
+4. Enter customer name, account number, and phone number.
+5. Click Add Customer.
+6. Customer details will appear below.
+Step 7: Initialize Git repository
+Open VS Code Terminal and execute:
+git init
+
+
+Step 8: Stage HTML file
+git add index.html
+
+
+Check the status:
+git status
+
+
+Commit the file:
+git commit -m "Added banking application HTML page"
+
+
+Step 9: Stage CSS file
+git add style.css
+
+
+Commit:
+git commit -m "Added banking application CSS styling"
+
+
+Step 10: Stage JavaScript file
+git add script.js
+
+
+Commit:
+git commit -m "Added customer details functionality"
+
+
+Step 11: Demonstrate unstaging
+Stage all files:
+git add .
+
+
+Unstage script.js:
+git restore --staged script.js
+
+
+Check status:
+git status
+
+
+Now script.js will be unstaged, while the other staged files remain staged (if they have uncommitted changes).
+Step 12: Stage the file again
+git add script.js
+
+
+Step 13: Check commit history
+git log --oneline
+
+
+Step 14: Check final Git status
+git status
+
+
+Expected output:
+nothing to commit, working tree clean
+
+
+Important Git commands
+Command	Purpose
+git init	Initialize repository
+git add index.html	Stage HTML file
+git add style.css	Stage CSS file
+git add script.js	Stage JavaScript file
+git add .	Stage all files
+git restore --staged script.js	Unstage a file
+git commit -m "message"	Commit changes
+git status	Check repository status
+git log --oneline	View commit history
+
+Result
+Successfully created a simple Banking Application using HTML, CSS, and JavaScript. Demonstrated staging, unstaging, and committing source files individually using Git.
+
+Note: This is a basic demonstration. Customer details are displayed only in the browser and are not permanently stored in a database.
+
+
+-------------------s9----------------------------------
+Experiment 9: Library Management System using Git Branches
+Aim: Develop a Library Management System, track source code using Git, create feature branches for Book Registration and Book Search, merge both branches, and maintain version history.
+Step 1: Open VS Code and create project
+1. Open VS Code.
+2. Click File → Open Folder.
+3. Create a folder named LibraryManagementSystem.
+4. Open Terminal → New Terminal.
+Step 2: Create project files
+Create these files in VS Code Explorer:
+LibraryManagementSystem/
+│
+├── index.html
+├── book-registration.html
+└── book-search.html
+
+
+Step 3: Create Home Page – index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+</head>
+<body>
+
+    <h1>Library Management System</h1>
+
+    <p>Welcome to Library Management System</p>
+
+    <a href="book-registration.html">Book Registration</a>
+    <br><br>
+
+    <a href="book-search.html">Book Search</a>
+
+</body>
+</html>
+
+
+Save using Ctrl + S.
+Step 4: Initialize Git repository
+Run in VS Code Terminal:
+git init
+git branch -M main
+git add index.html
+git commit -m "Created library home page"
+
+
+Step 5: Create Book Registration branch
+git checkout -b book-registration
+
+
+Open book-registration.html and add:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Registration</title>
+</head>
+<body>
+
+    <h2>Book Registration</h2>
+
+    <input type="text" id="name" placeholder="Book Name">
+    <br><br>
+
+    <input type="text" id="author" placeholder="Author Name">
+    <br><br>
+
+    <input type="text" id="id" placeholder="Book ID">
+    <br><br>
+
+    <button onclick="registerBook()">Register Book</button>
+
+    <p id="result"></p>
+
+    <a href="index.html">Home</a>
+
+    <script>
+        function registerBook() {
+            let name = document.getElementById("name").value;
+            let author = document.getElementById("author").value;
+            let id = document.getElementById("id").value;
+
+            if (name == "" || author == "" || id == "") {
+                alert("Fill all fields!");
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Book Registered Successfully!";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+Save and commit:
+git add book-registration.html
+git commit -m "Added book registration feature"
+
+
+Step 6: Create Book Search branch
+Switch to main:
+git checkout main
+
+
+Create the search branch:
+git checkout -b book-search
+
+
+Open book-search.html and add:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Search</title>
+</head>
+<body>
+
+    <h2>Book Search</h2>
+
+    <input type="text" id="name" placeholder="Enter Book Name">
+
+    <button onclick="searchBook()">Search</button>
+
+    <p id="result"></p>
+
+    <a href="index.html">Home</a>
+
+    <script>
+        function searchBook() {
+            let name = document.getElementById("name").value;
+
+            if (name == "") {
+                alert("Enter Book Name!");
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Searching for: " + name;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+Save and commit:
+git add book-search.html
+git commit -m "Added book search feature"
+
+
+Step 7: Merge both branches into main
+Switch to main:
+git checkout main
+
+
+Merge Book Registration:
+git merge book-registration
+
+
+Merge Book Search:
+git merge book-search
+
+
+Step 8: Check branches
+git branch
+
+
+Expected output:
+* main
+  book-registration
+  book-search
+
+
+Step 9: Maintain version history
+git log --oneline
+
+
+To see branch history:
+git log --oneline --graph --all
+
+
+----------------------------------- s10-----------------------------------
+
+Experiment 10: Online Examination System using Git and GitHub
+Aim: Develop an Online Examination System with Student Login, Question Display, and Result Calculation modules. Use Git branching, meaningful commits, merging, and GitHub push operations to manage development.
+Step 1: Open VS Code and create project
+1. Open VS Code.
+2. Click File → Open Folder.
+3. Create a folder named OnlineExaminationSystem.
+4. Open Terminal → New Terminal.
+Step 2: Create project files
+Create these files in VS Code Explorer:
+OnlineExaminationSystem/
+│
+├── index.html
+├── login.html
+├── exam.html
+└── result.html
+
+
+Step 3: Create Home Page – index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination System</title>
+</head>
+<body>
+
+    <h1>Online Examination System</h1>
+
+    <p>Welcome to Online Examination System</p>
+
+    <a href="login.html">Student Login</a>
+
+</body>
+</html>
+
+
+Step 4: Initialize Git repository
+Run these commands in VS Code Terminal:
+git init
+git branch -M main
+git add index.html
+git commit -m "Created examination home page"
+
+
+Step 5: Create Student Login branch
+git checkout -b student-login
+
+
+Open login.html and add:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+</head>
+<body>
+
+    <h2>Student Login</h2>
+
+    <input type="text" id="name" placeholder="Student Name">
+    <br><br>
+
+    <input type="text" id="roll" placeholder="Roll Number">
+    <br><br>
+
+    <button onclick="login()">Login</button>
+
+    <script>
+        function login() {
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+
+            if (name == "" || roll == "") {
+                alert("Enter all details!");
+            } else {
+                window.location.href = "exam.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+Save and commit:
+git add login.html
+git commit -m "Added student login feature"
+
+
+Step 6: Create Question Display branch
+Switch to main:
+git checkout main
+
+
+Create branch:
+git checkout -b question-display
+
+
+Open exam.html and add:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination</title>
+</head>
+<body>
+
+    <h2>Online Examination</h2>
+
+    <p>1. What is HTML?</p>
+
+    <input type="radio" name="q1" value="a"> Programming Language<br>
+    <input type="radio" name="q1" value="b"> Markup Language<br>
+    <input type="radio" name="q1" value="c"> Database<br>
+
+    <p>2. Which language is used for styling?</p>
+
+    <input type="radio" name="q2" value="a"> HTML<br>
+    <input type="radio" name="q2" value="b"> CSS<br>
+    <input type="radio" name="q2" value="c"> Java<br>
+
+    <button onclick="calculate()">Submit Exam</button>
+
+    <script>
+        function calculate() {
+            let score = 0;
+
+            if (document.querySelector('input[name="q1"]:checked')?.value == "b") {
+                score++;
+            }
+
+            if (document.querySelector('input[name="q2"]:checked')?.value == "b") {
+                score++;
+            }
+
+            localStorage.setItem("score", score);
+
+            window.location.href = "result.html";
+        }
+    </script>
+
+</body>
+</html>
+
+
+Save and commit:
+git add exam.html
+git commit -m "Added question display and examination feature"
+
+
+Step 7: Create Result Calculation branch
+Switch to main:
+git checkout main
+
+
+Create branch:
+git checkout -b result-calculation
+
+
+Open result.html and add:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Result</title>
+</head>
+<body>
+
+    <h2>Examination Result</h2>
+
+    <p id="result"></p>
+
+    <script>
+        let score = localStorage.getItem("score");
+
+        document.getElementById("result").innerHTML =
+            "Your Score: " + score + " / 2";
+    </script>
+
+    <a href="index.html">Home</a>
+
+</body>
+</html>
+
+
+Save and commit:
+git add result.html
+git commit -m "Added result calculation feature"
+
+
+Step 8: Merge all branches into main
+Switch to main:
+git checkout main
+
+
+Merge Student Login:
+git merge student-login
+
+
+Merge Question Display:
+git merge question-display
+
+
+Merge Result Calculation:
+git merge result-calculation
+
+
+Step 9: Check branches and version history
+git branch
+
+
+git log --oneline --graph --all
+
+
+Step 10: Push project to GitHub
+1. Open https://github.com.
+2. Click New Repository.
+3. Enter OnlineExaminationSystem.
+4. Click Create Repository.
+Replace YOUR_USERNAME with your GitHub username.
+git remote add origin https://github.com/YOUR_USERNAME/OnlineExaminationSystem.git
+git push -u origin main
+
+
+Push all feature branches:
+git push origin student-login
+git push origin question-display
+git push origin result-calculation
+
+
+Step 11: Run the application
+1. Open index.html in your browser.
+2. Click Student Login.
+3. Enter student name and roll number.
+4. Click Login.
+5. Answer the two questions.
+6. Click Submit Exam.
+7. View your result.
+Final project structure
+OnlineExaminationSystem/
+│
+├── index.html
+├── login.html
+├── exam.html
+└── result.html
+
+
+Result
+
+
+---comple1---------------------------------------
+
+Okay. Keep it very simple with only two files.
+Project structure
+JenkinsJavaProject/
+│
+├── App.java
+└── pom.xml
+
+
+1. App.java
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello Java CI/CD");
+    }
+}
+
+
+2. pom.xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>java-project</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+</project>
+
+
+3. Run Maven commands
+Open VS Code → Terminal → New Terminal.
+mvn clean
+mvn compile
+mvn package
+
+
+4. GitHub commands
+git init
+git add .
+git commit -m "Initial Java project"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/JenkinsJavaProject.git
+git push -u origin main
+
+
+5. Jenkins
+1. Open http://localhost:8080.
+2. Click New Item.
+3. Enter Java-CI-CD.
+4. Select Freestyle Project.
+5. Click OK.
+6. Under Source Code Management, select Git.
+7. Enter your GitHub repository URL.
+8. Under Build Steps, select Invoke top-level Maven targets.
+9. Enter:
+clean compile package
+
+
+10. Click Save → Build Now.
+Result
+Jenkins checks out the Java project from GitHub and uses Maven to compile and package the application automatically.
+
+Files required: Only App.java and pom.xml.
+
+
+
+
+--------------------comple 2-------------------
+give me only instruction commands and code
+Python CI/CD – Jenkins Freestyle Project
+Step 1: Open VS Code
+Open VS Code.
+
+Click File → Open Folder.
+
+Create folder PythonCICD.
+
+Create file app.py.
+
+Step 2: Add Python code
+app.py
+
+print("Python CI/CD Project")
+
+a = 10
+b = 20
+
+print("Sum:", a + b)
+
+Step 3: Run the application
+python app.py
+
+Step 4: Compile Python file
+python -m py_compile app.py
+
+Step 5: Package the application
+tar -a -c -f PythonCICD.zip app.py
+
+Step 6: Initialize Git
+git init
+git add .
+git commit -m "Initial Python application"
+git branch -M main
+
+Step 7: Create GitHub repository
+Open https://github.com
+
+Click New Repository.
+
+Enter PythonCICD.
+
+Click Create Repository.
+
+Step 8: Push to GitHub
+git remote add origin https://github.com/YOUR_USERNAME/PythonCICD.git
+git push -u origin main
+
+Step 9: Open Jenkins
+Open browser.
+
+Visit http://localhost:8080.
+
+Log in.
+
+Install Git plugin if required.
+
+Step 10: Create Freestyle Project
+Click New Item.
+
+Enter Python-CI-CD.
+
+Select Freestyle Project.
+
+Click OK.
+
+Step 11: Configure GitHub
+Under Source Code Management:
+
+Select Git.
+
+Repository URL:
+
+https://github.com/YOUR_USERNAME/PythonCICD.git
+- Branch:
+
+*/main
+Step 12: Configure Build Steps
+Select Add build step.
+
+Select Execute Windows batch command.
+
+Enter:
+
+python app.py
+python -m py_compile app.py
+tar -a -c -f PythonCICD.zip app.py
+4. Click Save.
+
+Step 13: Run Jenkins
+Click Build Now.
+
+Open the latest build.
+
+Click Console Output.
+
+Step 14: Automate builds
+Click Configure.
+
+Under Build Triggers, select Poll SCM.
+
+Enter:
+
+H/2 * * * *
+4. Click Save.
+
+Step 15: Test automatic build
+Modify app.py:
+
+print("Updated Python CI/CD Project")
+
+a = 10
+b = 20
+
+print("Sum:", a + b)
+
+Execute:
+
+git add .
+git commit -m "Updated Python application"
+git push origin main
+
+Result
+Jenkins automatically checks out the Python application from GitHub, executes it, compiles it, and packages it into PythonCICD.zip.
+
+
+------------complex 3---------------------
+whenever code changes are committed.   using free style project
+Experiment 3: Node.js CI/CD Using Jenkins, GitHub and Freestyle Project
+Step 1: Open VS Code
+Open VS Code.
+
+Click File → Open Folder.
+
+Create folder NodeCICD.
+
+Create file app.js.
+
+Step 2: Add Node.js code
+app.js
+
+console.log("Node.js CI/CD Project");
+
+let a = 10;
+let b = 20;
+
+console.log("Sum:", a + b);
+
+Step 3: Create package.json
+Open VS Code Terminal:
+
+npm init -y
+
+This generates package.json.
+
+Step 4: Run the application
+node app.js
+
+Expected output:
+
+Node.js CI/CD Project
+Sum: 30
+Step 5: Check JavaScript syntax
+node --check app.js
+
+Step 6: Package the application
+tar -a -c -f NodeCICD.zip app.js package.json
+
+Step 7: Initialize Git
+git init
+git add .
+git commit -m "Initial Node.js application"
+git branch -M main
+
+Step 8: Create GitHub repository
+Open https://github.com
+
+Click New Repository.
+
+Enter NodeCICD.
+
+Click Create Repository.
+
+Step 9: Push project to GitHub
+git remote add origin https://github.com/YOUR_USERNAME/NodeCICD.git
+git push -u origin main
+
+Step 10: Open Jenkins
+Open browser.
+
+Visit http://localhost:8080.
+
+Log in.
+
+Install the Git plugin if required.
+
+Step 11: Create Freestyle Project
+Click New Item.
+
+Enter Node-CI-CD.
+
+Select Freestyle Project.
+
+Click OK.
+
+Step 12: Configure GitHub
+Under Source Code Management:
+
+Select Git.
+
+Repository URL:
+
+https://github.com/YOUR_USERNAME/NodeCICD.git
+- Branch:
+
+*/main
+Step 13: Configure Build Steps
+Select Add build step.
+
+Select Execute Windows batch command.
+
+Enter:
+
+node --version
+npm --version
+npm install
+node app.js
+node --check app.js
+tar -a -c -f NodeCICD.zip app.js package.json
+4. Click Save.
+
+Step 14: Run Jenkins
+Click Build Now.
+
+Open the latest build.
+
+Click Console Output.
+
+Step 15: Automate builds
+Click Configure.
+
+Under Build Triggers, select Poll SCM.
+
+Enter:
+
+H/2 * * * *
+4. Click Save.
+
+Step 16: Test automatic build
+Modify app.js:
+
+console.log("Updated Node.js CI/CD Project");
+
+let a = 10;
+let b = 20;
+
+console.log("Sum:", a + b);
+
+Execute:
+
+git add .
+git commit -m "Updated Node.js application"
+git push origin main
+
+
+
+-------------------------complex 4-----------------
+Experiment 5: Python CI/CD using Jenkins, GitHub and Pipeline Script
+1. Create project
+Create a folder named PythonPipeline.
+PythonPipeline/
+└── app.py
+
+
+2. app.py
+print("Python CI/CD Project")a = 10b = 20print("Sum:", a + b)
+
+
+
+3. Run Python program
+python app.py
+
+
+4. Check Python code
+python -m py_compile app.py
+
+
+5. Upload project to GitHub
+git init
+git add .
+git commit -m "Python CI CD project"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/PythonPipeline.git
+git push -u origin main
+
+
+6. Create Pipeline in Jenkins
+1. Open http://localhost:8080.
+2. Click New Item.
+3. Enter Python-CI-CD.
+4. Select Pipeline and click OK.
+5. Select Pipeline script.
+6. Paste this code:
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/YOUR_USERNAME/PythonPipeline.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                bat 'python -m py_compile app.py'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'python app.py'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'tar -a -c -f PythonPipeline.zip app.py'
+            }
+        }
+    }
+}
+
+
+7. Replace YOUR_USERNAME with your GitHub username.
+8. Click Save → Build Now.
+7. Automate whenever code changes
+In Jenkins:
+1. Open your Pipeline job → Configure.
+2. Go to Build Triggers.
+3. Select Poll SCM.
+4. Enter:
+H/2 * * * *
+
+
+5. Click Save.
+
+Result: Jenkins checks GitHub for changes, downloads the Python code, checks its syntax, runs the program and creates a ZIP package.
+
+------------------comple 5--------------
+Experiment 4: Java CI/CD using Jenkins, GitHub and Maven – Pipeline Script
+1. Aim
+To implement CI/CD for a Java application using Jenkins, GitHub and Maven by automating checkout, compilation, testing and packaging.
+2. Create project
+JavaPipeline/
+├── pom.xml
+└── src/
+    └── main/
+        └── java/
+            └── App.java
+
+
+3. Java program – App.java
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Java CI/CD Project");
+
+        int a = 10;
+        int b = 20;
+
+        System.out.println("Sum: " + (a + b));
+    }
+}
+
+
+4. Create pom.xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>java-app</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+
+5. Run using Maven
+mvn clean compile
+mvn package
+
+
+6. Upload to GitHub
+git init
+git add .
+git commit -m "Java CI CD project"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/JavaPipeline.git
+git push -u origin main
+
+
+7. Create Pipeline in Jenkins
+1. Open http://localhost:8080.
+2. Click New Item.
+3. Enter Java-CI-CD.
+4. Select Pipeline and click OK.
+5. Select Pipeline script.
+6. Paste this script:
+pipeline {
+    agent any
+
+    tools {
+        jdk 'JDK21'
+        maven 'Maven3'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/YOUR_USERNAME/JavaPipeline.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package'
+            }
+        }
+    }
+}
+
+
+7. Replace YOUR_USERNAME with your GitHub username.
+8. Click Save → Build Now.
+8. Automate code changes
+1. Open Jenkins → Configure.
+2. Select Poll SCM under Build Triggers.
+3. Enter:
+H/2 * * * *
+
+
+4. Click Save.
+9. Result
+Jenkins automatically checks GitHub for code changes, downloads the Java application, compiles it, runs the
+
+--------------------------complex 6--------------------
+Let's create a simple Python Flask web application.
+Experiment 6: Docker Container Management with Python Web Application
+1. Project structure
+Create a folder named PythonDocker.
+PythonDocker/
+├── app.py
+├── requirements.txt
+└── Dockerfile
+
+
+2. Create app.py
+from flask import Flaskapp = Flask(__name__)@app.route("/")def home():    return "<h1>Welcome to Python Docker Application!</h1>"@app.route("/about")def about():    return "<h2>This application runs using Docker.</h2>"app.run(host="0.0.0.0", port=5000)
+
+
+
+3. Create requirements.txt
+flask
+
+
+4. Create Dockerfile
+FROM python:3.12
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
+
+
+5. Build Docker image
+docker build -t python-web .
+
+
+Purpose: Creates a Docker image for the Python web application.
+6. Run the container on a web server
+docker run -d -p 5000:5000 --name myweb python-web
+
+
+Purpose: Runs the application inside a container and maps port 5000 to your computer's port 5000.
+7. Open application in browser
+Python web application
+
+Port 5000
+
+Open these addresses in your browser
+
+http://localhost:5000
+
+http://localhost:5000/about
+
+8. Additional Docker commands
+Check running containers
+docker ps
+
+
+View container logs
+docker logs myweb
+
+
+Stop container
+docker stop myweb
+
+
+Start container
+docker start myweb
+
+
+Restart container
+docker restart myweb
+
+
+Remove container
+docker rm -f myweb
+
+
+Remove image
+docker rmi python-web
+
+
+9. Result
+Successfully created a Python Flask web application, built a Docker image, deployed it inside a Docker container and accessed it through the browser using port 5000.
+
+Important viva point:
+- EXPOSE 5000 documents the container port.
+- -p 5000:5000 maps the host port to the container port.
+- 0.0.0.0 allows Flask to accept connections from outside the container.
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+docker push any something
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yes! You can also push your Python Docker image to Docker Hub using the docker push command.
+10. Push Docker Image to Docker Hub
+Step 1: Login to Docker Hub
+docker login
+
+
+Enter your Docker Hub username and password/access token.
+Step 2: Tag your image
+docker tag python-web YOUR_USERNAME/python-web:v1
+
+
+Replace YOUR_USERNAME with your Docker Hub username.
+Step 3: Push image to Docker Hub
+docker push YOUR_USERNAME/python-web:v1
+
+
+Step 4: Download the image
+docker pull YOUR_USERNAME/python-web:v1
+
+
+Step 5: Run the downloaded image
+docker run -d -p 5000:5000 --name myweb YOUR_USERNAME/python-web:v1
+
+
+Open in browser:
+
+http://localhost:5000
+
+
+
+--------------------complex 7---------------------
+give me the experiment with more commands
+Experiment 7: Develop Simple Containerized Applications Using Docker (Python and Node.js)
+Part A: Python Application Using Docker
+1. Aim
+To develop a simple Python web application and deploy it inside a Docker container.
+
+2. Project structure
+PythonDocker/
+├── app.py
+├── requirements.txt
+└── Dockerfile
+3. Create app.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1>Hello from Python Docker!</h1>"
+
+app.run(host="0.0.0.0", port=5000)
+
+4. Create requirements.txt
+flask
+5. Create Dockerfile
+FROM python:3.12
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
+
+6. Execute Docker commands
+Check Docker version
+
+docker --version
+
+Download Python image
+
+docker pull python:3.12
+
+Build Docker image
+
+docker build -t python-app .
+
+List images
+
+docker images
+
+Run container
+
+docker run -d -p 5000:5000 --name python-container python-app
+
+Check running containers
+
+docker ps
+
+Check all containers
+
+docker ps -a
+
+Open application:
+
+http://localhost:5000
+
+View logs
+
+docker logs python-container
+
+Stop container
+
+docker stop python-container
+
+Start container
+
+docker start python-container
+
+Restart container
+
+docker restart python-container
+
+Remove container
+
+docker rm -f python-container
+
+Remove image
+
+docker rmi python-app
+
+Part B: Node.js Application Using Docker
+1. Aim
+To develop a simple Node.js web application and deploy it inside a Docker container.
+
+2. Project structure
+NodeDocker/
+├── app.js
+├── package.json
+└── Dockerfile
+3. Create app.js
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    res.end("Hello from Node.js Docker!");
+});
+
+server.listen(3000, "0.0.0.0");
+
+4. Create package.json
+Open VS Code terminal:
+
+npm init -y
+
+This automatically creates package.json.
+
+5. Create Dockerfile
+FROM node:22
+
+WORKDIR /app
+
+COPY package.json .
+
+COPY app.js .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
+
+6. Execute Docker commands
+Check Node.js version
+
+node --version
+
+Check npm version
+
+npm --version
+
+Download Node.js image
+
+docker pull node:22
+
+Build Docker image
+
+docker build -t node-app .
+
+List images
+
+docker images
+
+Run container
+
+docker run -d -p 3000:3000 --name node-container node-app
+
+Check running containers
+
+docker ps
+
+Check all containers
+
+docker ps -a
+
+Open application:
+
+http://localhost:3000
+
+View logs
+
+docker logs node-container
+
+Stop container
+
+docker stop node-container
+
+Start container
+
+docker start node-container
+
+Restart container
+
+docker restart node-container
+
+Remove container
+
+docker rm -f node-container
+
+Remove image
+
+docker rmi node-app
+
+7. Additional Docker commands
+These commands work with both Python and Node.js containers.
+
+Command
+
+Purpose
+
+docker info
+
+Displays Docker system information.
+
+docker inspect container-name
+
+Displays container details.
+
+docker stats
+
+Displays CPU and memory usage.
+
+docker top container-name
+
+Displays container processes.
+
+docker logs container-name
+
+Displays container logs.
+
+docker exec -it container-name sh
+
+Opens container terminal.
+
+docker cp file container-name:/app/
+
+Copies file into container.
+
+docker network ls
+
+Lists Docker networks.
+
+docker volume ls
+
+Lists Docker volumes.
+
+docker image prune
+
+Removes unused dangling images.
+
+docker container prune
+
+Removes stopped containers.
+
+docker system df
+
+Displays Docker disk usage.
+
+docker system prune
+
+Removes unused Docker resources.
+
+8. Push Docker images to Docker Hub
+Login
+docker login
+
+Python image
+docker tag python-app YOUR_USERNAME/python-app:v1
+docker push YOUR_USERNAME/python-app:v1
+
+Node.js image
+docker tag node-app YOUR_USERNAME/node-app:v1
+docker push YOUR_USERNAME/node-app:v1
+
+Download images
+docker pull YOUR_USERNAME/python-app:v1
+docker pull YOUR_USERNAME/node-app:v1
+
+Logout
+docker logout
+
+9. Important Docker options
+Option
+
+Purpose
+
+-d
+
+Runs container in background.
+
+-p
+
+Maps host port to container port.
+
+-it
+
+Runs container interactively.
+
+--name
+
+Assigns a name to container.
+
+-t
+
+Assigns a tag to image.
+
+-f
+
+Forces removal where supported.
+
+-a
+
+Displays all containers with docker ps -a.
+
+10. Result
+Successfully developed Python and Node.js web applications, created Docker images, deployed containers, accessed applications through web browsers and explored Docker management commands.
+
+--------------complex 8-----------------------------
+addd index.html and script in one file onle
+Experiment 8: JavaScript Program Testing Using Selenium
+Keep the HTML and JavaScript code in one file (index.html). Only create a separate test.js for Selenium.
+
+1. Project structure
+SeleniumProject/
+├── index.html
+└── test.js
+2. Create index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Calculator</title>
+</head>
+<body>
+
+    <h2>Sum Calculator</h2>
+
+    <input type="number" id="num1" placeholder="First Number">
+    <input type="number" id="num2" placeholder="Second Number">
+
+    <button onclick="add()">Add</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function add() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            document.getElementById("result").innerHTML = a + b;
+        }
+    </script>
+
+</body>
+</html>
+
+3. Install Selenium
+Open VS Code terminal:
+
+npm init -y
+npm install selenium-webdriver
+
+4. Create test.js
+const { Builder, By } = require("selenium-webdriver");
+
+async function test() {
+    let driver = await new Builder().forBrowser("chrome").build();
+
+    await driver.get("file:///C:/SeleniumProject/index.html");
+
+    await driver.findElement(By.id("num1")).sendKeys("10");
+    await driver.findElement(By.id("num2")).sendKeys("20");
+
+    await driver.findElement(By.tagName("button")).click();
+
+    let result = await driver.findElement(By.id("result")).getText();
+
+    console.log("Result:", result);
+
+    await driver.quit();
+}
+
+test();
+
+Replace the file path with your actual index.html location.
+
+5. Execute the program
+node test.js
+
+Expected output:
+
+Result: 30
+
+-----------------complex 9------------ we can do both with ptython and js-------------
+Experiment 9: Develop Test Cases for a Containerized Application Using Selenium
+1. Aim
+To develop test cases for a containerized Python web application using Selenium WebDriver.
+2. Project structure
+Use the Python Docker application from Experiment 7.
+PythonDocker/
+├── app.py
+├── requirements.txt
+├── Dockerfile
+└── test.js
+
+
+3. Python application – app.py
+from flask import Flaskapp = Flask(__name__)@app.route("/")def home():    return "<h1>Hello from Python Docker!</h1>"@app.route("/about")def about():    return "<h2>This application runs using Docker.</h2>"app.run(host="0.0.0.0", port=5000)
+
+
+
+4. Dockerfile
+FROM python:3.12
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
+
+
+5. Build and run Docker container
+docker build -t python-app .
+docker run -d -p 5000:5000 --name python-container python-app
+
+
+Open the application:
+
+http://localhost:5000
+6. Install Selenium
+Create a separate folder for Selenium testing or use the same project folder.
+npm init -y
+npm install selenium-webdriver
+
+
+7. Create test cases – test.js
+This program tests the home page and about page.
+const { Builder, By } = require("selenium-webdriver");
+
+async function test() {
+    let driver = await new Builder().forBrowser("chrome").build();
+
+    await driver.get("http://localhost:5000");
+
+    // Test Case 1: Check Home Page
+    let home = await driver.findElement(By.tagName("h1")).getText();
+
+    console.log(home === "Hello from Python Docker!"
+        ? "Test 1 Passed"
+        : "Test 1 Failed");
+
+    // Test Case 2: Check About Page
+    await driver.get("http://localhost:5000/about");
+
+    let about = await driver.findElement(By.tagName("h2")).getText();
+
+    console.log(about === "This application runs using Docker."
+        ? "Test 2 Passed"
+        : "Test 2 Failed");
+
+    await driver.quit();
+}
+
+test();
+
+
+8. Execute test cases
+First make sure your Docker container is running.
+docker ps
+
+
+Then execute:
+node test.js
+
+
+9. Expected output
+Test 1 Passed
+Test 2 Passed
+
+
+----------------js----------------
+Experiment 9: Containerize JavaScript Application and Perform Selenium Testing
+We will use your existing Sum Calculator application and run it inside a Docker container.
+1. Project structure
+SeleniumProject/
+├── index.html
+├── test.js
+└── Dockerfile
+
+
+2. Create index.html
+Keep your existing HTML and JavaScript code unchanged.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Calculator</title>
+</head>
+<body>
+
+    <h2>Sum Calculator</h2>
+
+    <input type="number" id="num1" placeholder="First Number">
+    <input type="number" id="num2" placeholder="Second Number">
+
+    <button onclick="add()">Add</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function add() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            document.getElementById("result").innerHTML = a + b;
+        }
+    </script>
+
+</body>
+</html>
+
+
+3. Create Dockerfile
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html/index.html
+
+EXPOSE 80
+
+
+4. Build Docker image
+Open VS Code terminal:
+docker build -t sum-calculator .
+
+
+Purpose: Creates a Docker image containing the HTML application and Nginx web server.
+5. Run Docker container
+docker run -d -p 8080:80 --name sum-app sum-calculator
+
+
+Purpose: Runs the application inside a Docker container.
+6. Open application
+Open Chrome:
+http://localhost:8080
+
+
+Enter:
+- First Number: 10
+- Second Number: 20
+Click Add.
+
+Expected output: 30
+7. Install Selenium
+Open terminal:
+npm init -y
+npm install selenium-webdriver
+
+
+8. Create test.js
+const { Builder, By } = require("selenium-webdriver");
+
+async function test() {
+    let driver = await new Builder().forBrowser("chrome").build();
+
+    await driver.get("http://localhost:8080");
+
+    await driver.findElement(By.id("num1")).sendKeys("10");
+    await driver.findElement(By.id("num2")).sendKeys("20");
+
+    await driver.findElement(By.tagName("button")).click();
+
+    let result = await driver.findElement(By.id("result")).getText();
+
+    console.log("Result:", result);
+
+    await driver.quit();
+}
+
+test();
+
+
+9. Execute Selenium testing
+node test.js
+
+
+Expected output:
+Result: 30
+
+
+10. Additional Docker commands
+Check running containers
+docker ps
+
+
+View all containers
+docker ps -a
+
+
+View application logs
+docker logs sum-app
+
+
+Stop container
+docker stop sum-app
+
+
+Start container
+docker start sum-app
+
+
+Remove container
+docker rm -f sum-app
+
+
+Remove image
+docker rmi sum-calculator
